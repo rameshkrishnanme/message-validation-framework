@@ -1,0 +1,76 @@
+<br /><br />
+<div class="container">
+	<br />
+	<div class="row">
+		<div class="col-md-12">
+			<h1>Message Pattern</h1>
+			<form class="form-horizontal">
+			
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="existingMessage">Existing Message:</label>
+					<div class="col-sm-9">
+						<select class="form-control m-b"
+							data-placeholder="Select Existing Message" ng-change="update()"
+							ng-model="epattern"
+							ng-options="epattern as epattern.name for epattern in epatterns">
+						</select>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-sm-3" for="name">Unique Message Name:</label>
+					<div class="col-sm-9">
+						<input type="text" class="form-control" id="name" ng-model="name"
+							placeholder="----Enter Unique Name">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="existingMessage">Message Pattern:</label>
+					<div class="col-md-12">
+							<textarea  class="col-sm-4" rows="9"
+								placeholder="----Enter Message Pattern" ng-model="pattern">
+							</textarea>
+							<textarea  class="col-sm-4" rows="9"
+								placeholder="----Enter Test Message" ng-model="test">
+								</textarea>
+							<textarea  class="col-sm-3" rows="9"
+								placeholder="----Test Result----" ng-model="testResults">
+							</textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="desc">Description :</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="name" ng-model="desc"
+							placeholder="----Enter Description">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-5">
+								<button type="button" class="btn btn-default btn-info"
+									ng-click="testFn()">Test</button>
+								<button type="button" class="btn btn-success"
+									ng-disabled="!testSuccess" ng-click="save()">Submit</button>
+								<button type="button" class="btn btn-danger"
+									ng-click="deleteFn()">Delete</button>
+								<button type="button" class="btn btn-info"
+									ng-click="resetForm()">Reset</button>
+							</div>
+							<div class="col-sm-7">
+								<div class="alert alert-warning" ng-show="respShow">
+									<strong>{{response}}</strong>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</div>
+<link href="css/sub.css" rel="stylesheet">

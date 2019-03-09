@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shopper</title>
+<link rel="stylesheet" href="/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="/fonts/font-awesome/css/font-awesome.min.css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700"
+	rel="stylesheet">
+
+<link type="text/css" href="/css/carrotcell.css" rel="stylesheet" />
+<link type="text/css" href="/css/carrotskin.css" rel="stylesheet" />
+<link rel="stylesheet" href="/css/jquery.raty.css">
+
+<link rel="stylesheet" href="/css/style.css">
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+
+<body ng-app="app" ng-controller="appController">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-2">
+				<div class="sidebar-nav-fixed affix">
+					<nav class="navbar navbar-inverse-new navbar-fixed-left">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle collapsed"
+									data-toggle="collapse" data-target="#navbar"
+									aria-expanded="false" aria-controls="navbar">
+									<span class="sr-only">Toggle navigation</span> <span
+										class="icon-bar"></span> <span class="icon-bar"></span> <span
+										class="icon-bar"></span>
+								</button>
+								<a class="navbar-brand" href="/">Shopper</a>
+							</div>
+							<div id="navbar" class="navbar-collapse collapse">
+								<ul class="nav navbar-nav">
+									<li class="dropdown" ng-mouseover="changeDirection(true)"
+										ng-mouseleave="changeDirection(false)"><a href="#"
+										class="dropdown-toggle" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">Sports<span
+											class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#"
+												ng-click="searchCategory('Sports', false)">Sports</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#"
+												ng-click="searchCategory('Football' , false)">Football</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('Cricket' , false)">Cricket</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('BasketBall' , false)">BasketBall</a></li>
+										</ul></li>
+									<li class="dropdown" ng-mouseover="changeDirection(true)"
+										ng-mouseleave="changeDirection(false)"><a href="#"
+										class="dropdown-toggle" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">Fashion<span
+											class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#"
+												ng-click="searchCategory('Fashion' , false)">Fashion</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#" ng-click="searchCategory('Men', false)">Men</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('Women', false)">Women</a></li>
+											<li><a href="#" ng-click="searchCategory('Kids', false)">Kids</a></li>
+										</ul></li>
+									<li class="dropdown" ng-mouseover="changeDirection(true)"
+										ng-mouseleave="changeDirection(false)"><a href="#"
+										class="dropdown-toggle" data-toggle="dropdown" role="button"
+										aria-haspopup="true" aria-expanded="false">Electronics<span
+											class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="#"
+												ng-click="searchCategory('Electronics', false)">Electronics</a></li>
+											<li role="separator" class="divider"></li>
+											<li><a href="#"
+												ng-click="searchCategory('Laptop', false)">Laptop</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('Mobile', false)">Mobile</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('Tablets', false)">Tablets</a></li>
+											<li role="separator" class="divider"></li>
+											<li class="dropdown-header">Wearables</li>
+											<li><a href="#"
+												ng-click="searchCategory('Fitbit', false)">Fitbit</a></li>
+											<li><a href="#"
+												ng-click="searchCategory('Twitch', false)">Twitch</a></li>
+										</ul></li>
+								</ul>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+			<div class="col-xs-8">
+				<div class="row">
+					<div class="col-xs-10">
+					</div>
+					<div class="col-xs-12">
+						<div class="container">
+							<div ng-show="precheckout">
+								<div class="thumbnail">
+									<a href="#"><img src="/image/prod/{{checkoutProduct.productImage}}"
+										style="width: 200px; height: 200px;" alt=""></a>
+									<div class="caption">
+										<h4>{{checkoutProduct.productName}}</h4>
+										<p>Price : {{checkoutProduct.productPrice}}</p>
+										<p><div data-score="{{checkoutProduct.rating}}" class="rating"></div>{{checkoutProduct.rating}}</p>
+									</div>
+									<div class="tab-pane" id="panel62" role="tabpanel">
+											<div class="form-group">
+												<label class="sr-only" for="f1-crt-email">Full Name</label> <input
+													type="text" name="f1-crt-Name" placeholder="Name..."
+													class="f1-crt-Name form-control" id="f1-crt-Name">
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="f1-crt-password">Address</label> <textarea
+													name="f1-crt-address" placeholder="Address..."
+													class="f1-crt-address form-control" id="f1-crt-address"></textarea>
+											</div>
+											<div class="form-group">
+												<label class="sr-only" for="f1-crt-cnumber">Card Number</label> <input
+													type="text" name="f1-crt-cnumber" placeholder="Card Number..."
+													class="f1-crt-cnumber form-control" id="f1-crt-cnumber">
+											</div>
+											<div class="f1-buttons">
+												<button type="button" ng-click="postCheckout()" class="btn btn-next">Checkout</button>
+												<a href="/"><button type="button" class="btn btn-next">Home</button></a>
+											</div>
+									</div>
+								</div>
+							</div>
+							<div ng-show="postcheckout">
+								<h3>Checkout Sucess</h3>
+								<p>You will be redirected to home page shortly</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-touchwipe.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="/js/jCarrotCell.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/jquery.raty.js"></script>
+	<script src="/js/angular.min.js"></script>
+	<script src="/js/application.js"></script>
+
+</body>
+
+</html>
+
