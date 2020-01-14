@@ -1,464 +1,172 @@
 {
 	"L1": {
-		"MSG": [
-			"FTL",
-			""
+		"FWRDSLASH": [
+			[
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/"
+			]
+		],
+		"FEMALECOUNT": [
+			"0"
+		],
+		"FEXST": [
+			"0"
+		],
+		"ECFemale": [
+			"13"
+		],
+		"AIRPORT": [
+			"DEL"
+		],
+		"CEXST": [
+			"2"
+		],
+		"H": [
+			"0"
+		],
+		"INFCOUNT": [
+			"0"
+		],
+		"JPAD": [
+			"4"
+		],
+		"YEXST": [
+			"3"
+		],
+		"CABIN4": [
+			null
+		],
+		"FPAD": [
+			"2"
+		],
+		"MALECOUNT": [
+			"0"
+		],
+		"CABIN3": [
+			"0"
+		],
+		"CABIN2": [
+			"0"
+		],
+		"CABIN1": [
+			"0"
+		],
+		"P": [
+			"0"
+		],
+		"DHCFemale": [
+			"0"
+		],
+		"YPAD": [
+			"1"
+		],
+		"CHILDCOUNT": [
+			"0"
+		],
+		"DHCMale": [
+			"10"
+		],
+		"W": [
+			"0"
+		],
+		"ECMale": [
+			"2"
 		]
 	},
 	"L2": {
-		"SUFFIX": [
-			""
+		"FWRDSLASH": [
+			[
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/",
+				"\/"
+			]
 		],
-		"MONTHCAPS": [
-			"JUL"
+		"FEMALECOUNT": [
+			"0"
+		],
+		"FEXST": [
+			"0"
+		],
+		"ECFemale": [
+			"13"
 		],
 		"AIRPORT": [
-			"MAD"
+			"BLR"
 		],
-		"FLIGHTIDENTIFIER": [
-			"IB777"
+		"CEXST": [
+			"2"
 		],
-		"FLIGHTAIRLINE": [
-			"IB"
+		"H": [
+			"0"
 		],
-		"FLIGHTNUMBER": [
-			"777"
+		"INFCOUNT": [
+			"0"
 		],
-		"DATEMON": [
-			"15JUL"
+		"JPAD": [
+			"4"
 		],
-		"MONTHDAY": [
-			"15"
-		]
-	},
-	"L3": {
-		"STDTIME": [
-			"STD\/1622"
-		]
-	},
-	"L4": {
-		"COUNT3": [
-			"004"
+		"YEXST": [
+			"3"
 		],
-		"AIRPORT": [
-			"JFK"
-		],
-		"CABIN": [
-			"F"
-		]
-	},
-	"L5": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTR IB 54265465644",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"54265465644",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"ANDERS\/EMILYMRS"
-		],
-		"RL": [
-			".L\/4567AS"
-		],
-		"FREETEXT": [
-			"UPG COUPON"
-		]
-	},
-	"L6": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 12377579337",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"12377579337",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"BENNETT\/TOMMR"
-		],
-		"RL": [
-			".L\/8762W2"
-		],
-		"FREETEXT": [
+		"CABIN4": [
 			null
-		]
-	},
-	"L7": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
 		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 456745677456",
-				null
-			]
+		"FPAD": [
+			"2"
 		],
-		"FQTVNUMBER": [
-			[
-				"456745677456",
-				null
-			]
+		"MALECOUNT": [
+			"0"
 		],
-		"ORG": [
-			"IB"
+		"CABIN3": [
+			"0"
 		],
-		"PAXNAME": [
-			"BENNETT\/SALLYMRS"
+		"CABIN2": [
+			"0"
 		],
-		"RL": [
-			".L\/8762W2"
+		"CABIN1": [
+			"0"
 		],
-		"FREETEXT": [
-			"R"
-		]
-	},
-	"L8": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
+		"P": [
+			"0"
 		],
-		"FQTVSSR": [
-			[
-				".R\/FQTR IB 1234567812348",
-				null
-			]
+		"DHCFemale": [
+			"0"
 		],
-		"FQTVNUMBER": [
-			[
-				"1234567812348",
-				null
-			]
+		"YPAD": [
+			"1"
 		],
-		"ORG": [
-			"IB"
+		"CHILDCOUNT": [
+			"0"
 		],
-		"PAXNAME": [
-			"SMITH\/AMY"
+		"DHCMale": [
+			"10"
 		],
-		"RL": [
-			".L\/H1W234"
+		"W": [
+			"0"
 		],
-		"FREETEXT": [
-			"50 PC COUPON"
-		]
-	},
-	"L9": {
-		"COUNT3": [
-			"007"
-		],
-		"AIRPORT": [
-			"JFK"
-		],
-		"CABIN": [
-			"Y"
-		]
-	},
-	"L10": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 1236534856825",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"1236534856825",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"CARTIER\/LEEMR"
-		],
-		"RL": [
-			".L\/H88885"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L11": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 1236546789234",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"1236546789234",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"JOHNSON\/BRYANMR"
-		],
-		"RL": [
-			".L\/H76767"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L12": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 123655656",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"123655656",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"KELSO\/JANICEMS"
-		],
-		"RL": [
-			".L\/123456"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L13": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 767676645",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"767676645",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"KELSO\/TOMMR"
-		],
-		"RL": [
-			".L\/123456"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L14": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 1235745675874",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"1235745675874",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"MAJORS\/LANCEMR"
-		],
-		"RL": [
-			".L\/H77777"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L15": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 1238383743921",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"1238383743921",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"MARTINEZ\/JUANMR"
-		],
-		"RL": [
-			".L\/876543"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L16": {
-		"AIRLINE": [
-			[
-				"IB",
-				"AA"
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 123766565644",
-				".R\/FQTV AA 88877766"
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"123766565644",
-				"88877766"
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"LIM\/SUE"
-		],
-		"RL": [
-			".L\/666XYZ"
-		],
-		"FREETEXT": [
-			null
-		]
-	},
-	"L17": {
-		"COUNT3": [
-			"001"
-		],
-		"AIRPORT": [
-			"MIA"
-		],
-		"CABIN": [
-			"Y"
-		]
-	},
-	"L18": {
-		"AIRLINE": [
-			[
-				"IB",
-				null
-			]
-		],
-		"FQTVSSR": [
-			[
-				".R\/FQTV IB 1234675874",
-				null
-			]
-		],
-		"FQTVNUMBER": [
-			[
-				"1234675874",
-				null
-			]
-		],
-		"ORG": [
-			"IB"
-		],
-		"PAXNAME": [
-			"TAYLOR\/LAWRENCEMR"
-		],
-		"RL": [
-			".L\/UV8692"
-		],
-		"FREETEXT": [
-			"F"
-		]
-	},
-	"L19": {
-		"MSG": [
-			"FTL"
-		],
-		"ENDMSG": [
-			"ENDFTL"
+		"ECMale": [
+			"2"
 		]
 	}
 }

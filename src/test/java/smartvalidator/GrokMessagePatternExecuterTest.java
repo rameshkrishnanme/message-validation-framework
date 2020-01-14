@@ -30,31 +30,23 @@ public class GrokMessagePatternExecuterTest {
     @Test
     public void testPILMessage() {
         ApplicationLogger.log("Starting test");
-
         GrokMessagePatternExecuter grokMessagePatternExecuter = testGrokMessagePatternExecuter();
         String testMessage = UtilFile.readFileContents("/PIL.message");
         Validate validate = new Validate();
         validate.setTestMessage(testMessage);
         validate = grokMessagePatternExecuter.validate(validate, "PIL");
         System.out.println("MessageValidResponse  : " + validate.getTestResults());
-
     }
 
     public static GrokMessagePatternExecuter testGrokMessagePatternExecuter() {
         GrokMessagePatternExecuter grokMessagePatternExecuter = new GrokMessagePatternExecuter() {
-
             public MessagePattern loadMessagePattern(String uniqueMessageIdentifier) {
                 return MessagePattern.buildMessagePattern(UtilFile.readFileContents("/PIL.pattern"));
             }
-
             @Override
             public GrokCompiler getGrokComplier() {
                 return testGrokComplier();
             }
-
-               
-            
-
         };
         return grokMessagePatternExecuter;
     }

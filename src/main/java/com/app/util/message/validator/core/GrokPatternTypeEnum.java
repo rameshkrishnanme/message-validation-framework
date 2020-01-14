@@ -13,7 +13,11 @@ public enum GrokPatternTypeEnum {
     
     REPEAT_START("[REPEAT::]") , 
     
-    REPEAT_END("[::REPEAT]");
+    REPEAT_END("[::REPEAT]"),
+    
+    OPT_START("[OPT::]") , 
+    
+    OPT_END("[::OPT]");
 
     private String reservedPattern;
     

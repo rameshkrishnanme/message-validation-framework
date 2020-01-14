@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.app.util.message.validator.core.GrokPattern;
 import com.app.util.message.validator.core.GrokPatternTypeEnum;
 import com.app.util.message.validator.domain.repository.MessagePatternRepository;
+import com.app.util.message.validator.domain.repository.StandAloneRepository;
 import com.app.util.message.validator.exception.NoMatchException;
 import com.app.util.message.validator.exception.PartialMatchException;
 import com.app.util.message.validator.manage.JSONOrderSerialzer;
@@ -25,7 +26,11 @@ public class GrokMessagePatternExecuter extends AbstractPatternExecuter {
     
     @Autowired
     MessagePatternRepository messagePatternRepository;
-
+    
+    @Autowired
+    protected StandAloneRepository standAloneRepository;
+    
+    
     public Validate validate(Validate validate) {
         final MessagePattern messagePattern = MessagePattern.buildMessagePattern(validate.getTestPattern());
         final MessageValidResponse validateMessage = validateMessage(validate.getTestMessage(), messagePattern);
@@ -90,16 +95,15 @@ public class GrokMessagePatternExecuter extends AbstractPatternExecuter {
         int patternSeq = 0;
         int messageSeq = 0;
 
-        RepeatPatternExecuter repeatPatternExecuter = new RepeatPatternExecuter();
+        RepeatPatternExecuter repeatPatternExecuter = new RepeatPatternExecuter(standAloneRepository);
         for (patternSeq = 0; patternSeq < patternLength; patternSeq++) {
 
             GrokPattern grokPattern = grokPatterns[patternSeq];
 
-            if (grokPattern.getGrokPatternType() == GrokPatternTypeEnum.REPEAT_START) {
+            while (grokPattern.getGrokPatternType() == GrokPatternTypeEnum.REPEAT_START) {
+            	GrokPattern[] subGrokPatterns = buildSubGrokPatterns(patternSeq, grokPatterns);
 
-                GrokPattern[] subGrokPatterns = buildSubGrokPatterns(patternSeq, grokPatterns);
-
-               
+                
                 repeatPatternExecuter.execute(subGrokPatterns, msgContent, messageSeq, jsonObject);
                 messageSeq = repeatPatternExecuter.getMessageSeqFinish();
 
@@ -110,13 +114,35 @@ public class GrokMessagePatternExecuter extends AbstractPatternExecuter {
                 }
                 grokPattern = grokPatterns[patternSeq];
             }
+            
+			/*
+			 * if (grokPattern.getGrokPatternType() == GrokPatternTypeEnum.REPEAT_START) {
+			 * 
+			 * GrokPattern[] subGrokPatterns = buildSubGrokPatterns(patternSeq,
+			 * grokPatterns);
+			 * 
+			 * 
+			 * repeatPatternExecuter.execute(subGrokPatterns, msgContent, messageSeq,
+			 * jsonObject); messageSeq = repeatPatternExecuter.getMessageSeqFinish();
+			 * 
+			 * patternSeq = patternSeq + subGrokPatterns.length;
+			 * 
+			 * if (patternSeq == grokPatterns.length) { break; } grokPattern =
+			 * grokPatterns[patternSeq]; }
+			 */
+            
+            if (messageSeq == messageLength) {
+            	break;
+            }
 
-            final String message = msgContent[messageSeq];
             try {
+            	
+            	
+            	final String message = msgContent[messageSeq];
                 //final Map<String, Object> compileMessage = compileMessage(grokPattern, message);
                 //jsonObject.put(String.valueOf(messageSeq), compileMessage);
                 
-                compileMessage(grokPattern, message, jsonObject, messageSeq);
+                compileMessage(grokPattern, message, jsonObject, messageSeq, grokPatterns);
             }
             catch (NoMatchException e) {
                 if (repeatPatternExecuter.repeatException != null 

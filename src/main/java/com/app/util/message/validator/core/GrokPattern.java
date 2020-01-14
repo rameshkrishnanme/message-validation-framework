@@ -12,6 +12,8 @@ public class GrokPattern {
 	
 	private GrokPatternTypeEnum grokPatternType;
 	
+	private boolean isOptional;
+	
     public GrokPattern(String regEx, GrokPatternTypeEnum grokPatternType, String description, String name, 
         String fieldName) {
         super();
@@ -25,16 +27,13 @@ public class GrokPattern {
     public GrokPattern(GrokPatternTypeEnum grokPatternType) {
         this.grokPatternType = grokPatternType;
     }
-    
     public GrokPattern(String regEx, GrokPatternTypeEnum grokPatternType) {
         this.regEx = regEx;
         this.grokPatternType = grokPatternType;
     }
-    
     public GrokPattern() {
         
     }
-
     public String getRegEx() {
         return regEx;
     }
@@ -65,7 +64,14 @@ public class GrokPattern {
     public void setGrokPatternType(GrokPatternTypeEnum grokPatternType) {
         this.grokPatternType = grokPatternType;
     }
-	
-	
 
+    public boolean isOptional() {
+      return isOptional;
+    }
+
+    public void setOptional(boolean isOptional) {
+      this.isOptional = isOptional;
+    }
+    
+    
 }

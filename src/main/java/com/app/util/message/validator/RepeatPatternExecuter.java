@@ -4,6 +4,7 @@ package com.app.util.message.validator;
 import com.app.util.message.validator.core.GrokPattern;
 import com.app.util.message.validator.core.GrokPatternTypeEnum;
 import com.app.util.message.validator.core.RepeatType;
+import com.app.util.message.validator.domain.repository.StandAloneRepository;
 import com.github.cliftonlabs.json_simple.JsonObject;
 
 public class RepeatPatternExecuter extends AbstractPatternExecuter {
@@ -13,7 +14,11 @@ public class RepeatPatternExecuter extends AbstractPatternExecuter {
     int messageSeqFinish = 0;
     int messageSeq = 0;
 
-    public void execute(GrokPattern[] subGrokPatterns, String[] msgContent, int messageSeq, JsonObject jsonObject) {
+    public RepeatPatternExecuter(StandAloneRepository standAloneRepository) {
+    	super.standAloneRepository = standAloneRepository;
+	}
+
+	public void execute(GrokPattern[] subGrokPatterns, String[] msgContent, int messageSeq, JsonObject jsonObject) {
         
         this.messageSeq = messageSeq;
         int start = 1;
@@ -40,7 +45,7 @@ public class RepeatPatternExecuter extends AbstractPatternExecuter {
 
                 GrokPattern[] subNewGrokPatterns = buildSubGrokPatterns(patternSeq, subGrokPatterns);
 
-                RepeatPatternExecuter repeatPatternExecuter = new RepeatPatternExecuter();
+                RepeatPatternExecuter repeatPatternExecuter = new RepeatPatternExecuter(standAloneRepository);
                 repeatPatternExecuter.execute(subNewGrokPatterns, msgContent, messageSeq, jsonObject);
                 messageSeq = repeatPatternExecuter.getMessageSeqFinish();
                 // Continue Pattern
@@ -52,10 +57,10 @@ public class RepeatPatternExecuter extends AbstractPatternExecuter {
                 grokPattern = subGrokPatterns[patternSeq];
             }
             
-            final String message = msgContent[messageSeq];
             
             try {
-                compileMessage(grokPattern, message, jsonObject, messageSeq);
+            	final String message = msgContent[messageSeq];
+                compileMessage(grokPattern, message, jsonObject, messageSeq, subGrokPatterns);
                 //jsonObject.put(String.valueOf(messageSeq), compileMessage);
             }
             catch (Exception e) {
